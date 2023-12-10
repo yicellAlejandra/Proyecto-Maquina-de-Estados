@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "author": "Yicell Alejandra Troyano - Mary Montenegro - Liseth Rivera",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": -258.6, "left": 92.4, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -495.77, "left": 256, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -433.3, "left": 153.4, "attrs": {} },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": -408.8,
+      "left": 10.7,
+      "attrs": { "common": "cathode" }
+    },
+    { "type": "wokwi-membrane-keypad", "id": "keypad1", "top": -722, "left": 735.2, "attrs": {} },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -428.8,
+      "left": 567.2,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc1",
+      "top": -314.2,
+      "left": 537,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -448.8,
+      "left": 69,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "mega:GND.5", "lcd1:K", "black", [ "v0.95", "h55", "v-240", "h-86.4" ] ],
+    [ "lcd1:VSS", "mega:GND.5", "black", [ "v38.4", "h230.4", "v240" ] ],
+    [ "lcd1:A", "mega:5V.2", "red", [ "v19.2", "h38.3" ] ],
+    [ "lcd1:VDD", "mega:5V.2", "red", [ "v19.2", "h163.3" ] ],
+    [ "pot1:VCC", "mega:5V.2", "red", [ "v19.2", "h258.4" ] ],
+    [ "pot1:GND", "mega:GND.5", "black", [ "v38.4", "h336", "v240" ] ],
+    [ "lcd1:V0", "pot1:SIG", "gold", [ "v28.8", "h-115.5" ] ],
+    [ "mega:12", "lcd1:RS", "white", [ "v-67.2", "h86.1" ] ],
+    [ "lcd1:RW", "mega:GND.5", "black", [ "v38.4", "h191.9", "v240" ] ],
+    [ "mega:11", "lcd1:E", "cyan", [ "v-57.6", "h95.6" ] ],
+    [ "lcd1:D4", "mega:5", "magenta", [ "v67.2", "h-76.8" ] ],
+    [ "lcd1:D5", "mega:4", "green", [ "v76.8", "h-76.7" ] ],
+    [ "lcd1:D6", "mega:3", "yellow", [ "v86.4", "h-9.4" ] ],
+    [ "lcd1:D7", "mega:2", "cyan", [ "v96", "h-76.5" ] ],
+    [ "rgb1:COM", "mega:GND.5", "black", [ "v28.4", "h489.7", "v239.05" ] ],
+    [ "rgb1:B", "mega:9", "blue", [ "v67.2", "h136" ] ],
+    [ "rgb1:G", "mega:8", "green", [ "v76.8", "h154.9" ] ],
+    [ "rgb1:R", "mega:10", "red", [ "v86.4", "h153.6" ] ],
+    [ "mega:24", "keypad1:R1", "yellow", [ "v0.95", "h218.6" ] ],
+    [ "mega:26", "keypad1:R2", "yellow", [ "v1.05", "h228.2" ] ],
+    [ "mega:28", "keypad1:R3", "yellow", [ "v1.15", "h247.4" ] ],
+    [ "mega:30", "keypad1:R4", "yellow", [ "v1", "h257" ] ],
+    [ "mega:32", "keypad1:C1", "yellow", [ "v1.1", "h257" ] ],
+    [ "mega:34", "keypad1:C2", "yellow", [ "v1.2", "h429.8", "v-201.6" ] ],
+    [ "mega:36", "keypad1:C3", "yellow", [ "v1.3", "h276.2" ] ],
+    [ "mega:38", "keypad1:C4", "yellow", [ "v1.15", "h285.8" ] ],
+    [ "ldr1:VCC", "mega:5V.2", "red", [ "h38.4", "v67.2", "h-316.8", "v95" ] ],
+    [ "ldr1:GND", "mega:GND.5", "black", [ "h28.8", "v76.4", "h-249.6", "v240" ] ],
+    [ "ldr1:AO", "mega:A0", "cyan", [ "h19.2", "v325.7", "h-393.6" ] ],
+    [ "ntc1:GND", "mega:GND.5", "black", [ "h9.6", "v-38.4", "h-163.2", "v240" ] ],
+    [ "ntc1:VCC", "mega:5V.2", "red", [ "h19.2", "v-67.2", "h-230.4" ] ],
+    [ "ntc1:OUT", "mega:A1", "magenta", [ "h19.2", "v220.7", "h-384" ] ],
+    [ "bz1:1", "mega:GND.5", "black", [ "v38.4", "h422.4", "v240" ] ],
+    [ "bz1:2", "mega:7", "violet", [ "v96", "h172.4" ] ]
+  ],
+  "dependencies": {}
+}
